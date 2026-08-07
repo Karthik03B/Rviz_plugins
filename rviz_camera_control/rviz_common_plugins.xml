@@ -1,0 +1,27 @@
+<library path="rviz_camera_control_panel">
+
+  <class
+      name="rviz_camera_control/CameraControlPanel"
+      type="rviz_camera_control::CameraControlPanel"
+      base_class_type="rviz_common::Panel">
+    <description>
+      Bridges ROS 2 topics to the RViz render camera. Publishes CameraState
+      telemetry for whatever view controller is active, and forwards
+      CameraCommand messages to the camera whenever the
+      "rviz_camera_control/External" view controller is active.
+    </description>
+  </class>
+
+  <class
+      name="rviz_camera_control/External"
+      type="rviz_camera_control::ExternalViewController"
+      base_class_type="rviz_common::ViewController">
+    <description>
+      Camera view controller whose position, orientation, field of view and
+      clip planes are set entirely by an external caller (normally
+      CameraControlPanel, in response to ROS 2 CameraCommand messages)
+      instead of by mouse interaction.
+    </description>
+  </class>
+
+</library>

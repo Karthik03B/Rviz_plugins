@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rviz_camera_control</name>
+  <version>0.1.0</version>
+  <description>
+    RViz2 panel and view controller plugin providing complete external
+    (ROS 2 topic driven) control of the RViz render camera -- position,
+    orientation, field of view and clip planes -- plus continuous camera
+    state telemetry. Intended as the visualization layer of an autonomous
+    UAV operator interface: the camera can be driven from vehicle pose,
+    a chase/follow controller, a scripted flythrough, or any other external
+    source, without touching RViz's own source tree.
+  </description>
+
+  <maintainer email="maintainer@example.com">Karthik</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>pluginlib</depend>
+  <depend>rviz_common</depend>
+  <depend>rviz_rendering</depend>
+  <depend>rviz_ogre_vendor</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>qtbase5-dev</depend>
+
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <rviz plugin="${prefix}/rviz_common_plugins.xml"/>
+  </export>
+</package>
